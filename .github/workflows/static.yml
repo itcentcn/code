@@ -39,6 +39,8 @@ jobs:
           # Upload entire repository
           path: '.'
       - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
       - name: Delete .git
         run: sudo rm -rf .git/ .github/
       - name: Install COSCMD
@@ -47,5 +49,3 @@ jobs:
         run: coscmd config -r ${{ secrets.COS_Region }} -b ${{ secrets.COS_Bucket }} -a ${{ secrets.COS_SecretId }} -s ${{ secrets.COS_SecretKey }}
       - name: Upload HTML
         run: coscmd upload -rsfy --delete ./ /
-        id: deployment
-        uses: actions/deploy-pages@v4
