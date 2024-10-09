@@ -41,9 +41,9 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-      - name: Upload HTML to COS
-        run: |
-          sudo rm -rf .git/ .github/
-          sudo pip install coscmd
-          coscmd config -r ${{ secrets.COS_Region }} -b ${{ secrets.COS_Bucket }} -a ${{ secrets.COS_SecretId }} -s ${{ secrets.COS_SecretKey }}
-          coscmd upload -rsfy --delete ./ /
+      # - name: Upload HTML to COS
+      #   run: |
+      #     sudo rm -rf .git/ .github/
+      #     sudo pip install coscmd
+      #     coscmd config -r ${{ secrets.COS_Region }} -b ${{ secrets.COS_Bucket }} -a ${{ secrets.COS_SecretId }} -s ${{ secrets.COS_SecretKey }}
+      #     coscmd upload -rsfy --delete ./ /
