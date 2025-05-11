@@ -622,7 +622,7 @@ a.text-grey {
 .wrap-header.h1wrap {
   text-align: center;
   margin-top: 4.6rem;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
 }
 
 .wrap-header.h1wrap .wrap-body {
@@ -1454,6 +1454,12 @@ body.search {
   }
   .header-nav .max-container {
     padding-top: 0.85rem;
+  }
+  .header-nav .menu a.edit > :last-child,
+  .header-nav .menu a.searchbtn > :last-child,
+  .header-nav .menu a.searchbtn > :nth-last-child(2),
+  .header-nav .menu a.home > :last-child {
+    display: none;
   }
   .header-nav .menu a,
   .header-nav .menu button {
